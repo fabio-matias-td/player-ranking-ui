@@ -1,0 +1,10 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "defaultSeverity": "error",
+  "rules": {
+    "interface-name": [true, "never-prefix"]
+  },
+  "linterOptions": {
+    "exclude": ["src/serviceWorker.ts"]
+  }
+}

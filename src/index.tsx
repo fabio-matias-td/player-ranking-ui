@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Route, Router } from "react-router-dom";
-import App from "./app/App";
+
 import configureHistory from "./config/history";
 import configureStore from "./config/store";
+
+import { App } from "./containers/App";
+
 import * as serviceWorker from "./serviceWorker";
 
 const rootElement = document.getElementById("root");
@@ -25,7 +28,7 @@ function renderApp() {
 renderApp();
 
 if (module.hot) {
-  module.hot.accept("./app/App", () => {
+  module.hot.accept("./index.tsx", () => {
     renderApp();
   });
 }

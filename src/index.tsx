@@ -1,17 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import App from "./app/App";
+import { Router } from "react-router-dom";
+
+import configureHistory from "./config/history";
+import routes from "./config/routes";
 import configureStore from "./config/store";
+
+import { App } from "./containers/App";
+
+import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 const rootElement = document.getElementById("root");
 const store = configureStore();
+const history = configureHistory();
 
 function renderApp() {
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <Router history={history}>
+        <App routes={routes} />
+      </Router>
     </Provider>,
     rootElement
   );
@@ -20,7 +30,7 @@ function renderApp() {
 renderApp();
 
 if (module.hot) {
-  module.hot.accept("./app/App", () => {
+  module.hot.accept("./index.tsx", () => {
     renderApp();
   });
 }

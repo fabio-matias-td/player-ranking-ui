@@ -8,6 +8,7 @@ import configureStore from "./config/store";
 
 import { App } from "./containers/App";
 
+import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 const rootElement = document.getElementById("root");

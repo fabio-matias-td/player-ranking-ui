@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { Route, Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 import configureHistory from "./config/history";
+import routes from "./config/routes";
 import configureStore from "./config/store";
 
 import { App } from "./containers/App";
@@ -19,7 +20,7 @@ function renderApp() {
   ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
-        <Route path="/" component={App} />
+        <App routes={routes} />
       </Router>
     </Provider>,
     rootElement

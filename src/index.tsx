@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import App from "./app/App";
+import configureStore from "./config/store";
 import * as serviceWorker from "./serviceWorker";
 
 const rootElement = document.getElementById("root");
+const store = configureStore();
 
 function renderApp() {
-  ReactDOM.render(<App />, rootElement);
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    rootElement
+  );
 }
 
 renderApp();

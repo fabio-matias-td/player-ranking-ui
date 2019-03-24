@@ -37,6 +37,7 @@
     "@types/webpack-env": "^1.13.9",
     "prettier": "^1.16.4",
     "prettier-tslint": "^0.4.2",
+    "redux-devtools-extension": "^2.13.8",
     "tslint": "^5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^3.6.0"
